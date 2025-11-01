@@ -25,19 +25,20 @@ def index():
     prediction = None
 
     if request.method == "POST":
-        # Collect form input
-        user_input = {col: request.form[col] for col in columns}
-        X = pd.DataFrame([user_input])
-        for c in X.columns:
-            X[c] = X[c].astype("category")
+    user_input = {col: request.form[col] for col in columns}
+    X = pd.DataFrame([user_input])
 
-        y_pred = model.predict(X)[0]
-        label = encoder.inverse_transform([int(y_pred)])[0]
+    # Use same category metadata as training
+    for col in columns:
+        X[col] = pd.Categorical(X[col], categories=cat_info[col])
 
-        if label == "e":
-            prediction = "✅ This mushroom is likely edible!"
-        else:
-            prediction = "☠️ This mushroom is likely poisonous!"
+    y_pred = model.predict(X)[0]
+    label = encoder.inverse_transform([int(y_pred)])[0]
+
+    if label == "e":
+        prediction = "✅ This mushroom is likely edible!"
+    else:
+        prediction = "☠️ This mushroom is likely poisonous!"
 
     return render_template("index.html", prediction=prediction)
 
