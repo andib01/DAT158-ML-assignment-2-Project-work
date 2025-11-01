@@ -49,20 +49,70 @@
       <label>Stalk Color Below Ring:</label>
       <input type="text" name="stalk-surface-below-ring" required>
       <label>Veil Type:</label>
-      <input type="text" name="veil-type" required>
-      <label>Veil Color:</label>
-      <input type="text" name="veil-color" required>
-      <label>Ring Number:</label>
-      <input type="text" name="ring-number" required>
-      <label>Ring Type:</label>
-      <input type="text" name="ring-type" required>
-      <label>Spore Print Color:</label>
-      <input type="text" name="spore-print-color" required>
-      <label>Population:</label>
-      <input type="text" name="population" required>
-      <label>Habitat:</label>
-      <input type="text" name="habitat" required>
+      <select id = "veil-type" name="veil-type" required>
+         <option value = "p"> Partial</option> 
+         <option value = "u"> Universal</option> 
+      </select>
       
+      <label>Veil Color:</label>
+      <select id = "veil-color" name="veil-color" required>
+         <option value = "n"> Brown</option> 
+         <option value = "o"> Orange</option>
+         <option value = "w"> White</option>
+         <option value = "y"> Yellow</option>
+      </select>
+      
+      <label>Ring Number:</label>
+      <select id = "ring-number" name="ring-number" required>
+         <option value = "n"> None</option> 
+         <option value = "o"> One</option>
+         <option value = "t"> Two</option>
+      </select>
+      
+      <label>Ring Type:</label>
+      <select id = "ring-type" name="ring-type" required>
+         <option value = "c"> Cobwebby</option> 
+         <option value = "e"> Evanescent</option>
+         <option value = "f"> Flaring</option>
+         <option value = "l"> Large</option>
+         <option value = "n"> None</option>
+         <option value = "p"> Pendant</option>
+         <option value = "s"> Sheating</option>
+         <option value = "z"> Zone</option>
+      </select>
+      <label>Spore Print Color:</label>
+      <select id = "spore-print-color" name="spore-print-color" required>
+         <option value = "k"> Black</option> 
+         <option value = "n"> Brown</option>
+         <option value = "b"> Buff</option>
+         <option value = "h"> Chocolate</option>
+         <option value = "r"> Green</option>
+         <option value = "o"> Orange</option>
+         <option value = "u"> Purple</option>
+         <option value = "w"> White</option>
+         <option value = "y"> Yellow</option>
+      </select>
+      
+      <label>Population:</label>
+      <select id = "population" name="population" required>
+         <option value = "a"> Abundant</option> 
+         <option value = "c"> Clustered</option>
+         <option value = "n"> Numerous</option>
+         <option value = "s"> Scattered</option>
+         <option value = "v"> Several</option>
+         <option value = "y"> Solitary</option>
+      </select>
+      
+      <label>Habitat:</label>
+      <select id = "habitat" name="habitat" required>
+         <option value = "g"> Grasses</option> 
+         <option value = "l"> Leaves</option>
+         <option value = "m"> Meadows</option>
+         <option value = "p"> Paths</option>
+         <option value = "u"> Urban</option>
+         <option value = "w"> Waste</option>
+         <option value = "d"> Woods</option>
+      </select>
       
       <button type="submit">Predict</button>
     </form>
