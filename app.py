@@ -7,6 +7,7 @@ app = Flask(__name__)
 # Load trained model and encoder
 model = joblib.load("models/mushroom_model.pkl")
 encoder = joblib.load("models/label_encoder.pkl")
+cat_info = joblib.load("models/mushroom_categories.pkl")
 
 # Define feature names
 columns = [
@@ -25,15 +26,14 @@ def index():
     prediction = None
 
     if request.method == "POST":
-    user_input = {col: request.form[col] for col in columns}
-    X = pd.DataFrame([user_input])
+        user_input = {col: request.form[col] for col in columns}
+        X = pd.DataFrame([user_input])
 
-    # Use same category metadata as training
-    for col in columns:
-        X[col] = pd.Categorical(X[col], categories=cat_info[col])
+        for col in columns:
+            X[col] = pd.Categorical(X[col], categories=cat_info[col])
 
-    y_pred = model.predict(X)[0]
-    label = encoder.inverse_transform([int(y_pred)])[0]
+        y_pred = model.predict(X)[0]
+        label = encoder.inverse_transform([int(y_pred)])[0]
 
     if label == "e":
         prediction = "✅ This mushroom is likely edible!"
