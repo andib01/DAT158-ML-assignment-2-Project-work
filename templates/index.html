@@ -11,9 +11,17 @@
 
     <form method="POST">
       <label>Cap Shape:</label>
-      <input type="text" name="cap-shape" required>
+      <select id = "cap-shape" name="cap-shape" required>
+         <option value = "c"> conical</option> 
+         <option value = "x"> convex</option> 
+         <option value = "f"> flat</option> 
+         <option value = "k"> knobbed</option> 
+         <option value = "s"> sunken</option> 
+        </select>
       <label>Cap Surface:</label>
-      <input type="text" name="cap-surface" required>
+      <select id="text" name="cap-surface" required>
+      
+      </select>
       <label>Cap Color:</label>
       <input type="text" name="cap-color" required>
       <label>Bruises:</label>
@@ -55,8 +63,6 @@
       <label>Habitat:</label>
       <input type="text" name="habitat" required>
       
-      <label>Cap Shape:</label>
-      <input type="text" name="cap-shape" required>
       
       <button type="submit">Predict</button>
     </form>

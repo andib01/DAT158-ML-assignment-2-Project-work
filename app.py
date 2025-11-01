@@ -5,8 +5,8 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load trained model and encoder
-model = joblib.load("mushroom_model.pkl")
-encoder = joblib.load("label_encoder.pkl")
+model = joblib.load("models/mushroom_model.pkl")
+encoder = joblib.load("models/label_encoder.pkl")
 
 # Define feature names
 columns = [
