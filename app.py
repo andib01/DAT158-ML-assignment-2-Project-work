@@ -4,12 +4,10 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Load trained model and encoder
 model = joblib.load("models/mushroom_model.pkl")
 encoder = joblib.load("models/label_encoder.pkl")
 cat_info = joblib.load("models/mushroom_categories.pkl")
 
-# Define feature names
 columns = [
     "cap-shape", "cap-surface", "cap-color", "bruises", "odor",
     "gill-attachment", "gill-spacing", "gill-size", "gill-color",
@@ -36,9 +34,9 @@ def index():
         label = encoder.inverse_transform([int(y_pred)])[0]
 
     if label == "e":
-        prediction = "✅ This mushroom is likely edible!"
+        prediction = "This mushroom is edible!"
     else:
-        prediction = "☠️ This mushroom is likely poisonous!"
+        prediction = "This mushroom is poisonous!"
 
     return render_template("index.html", prediction=prediction)
 
