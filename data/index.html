@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mushroom Edibility Detector 🍄</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Mushroom Edibility Detector 🍄</h1>
+    <p>Select the characteristics of a mushroom to see if it's edible or poisonous.</p>
+
+    <form method="POST">
+      <label>Cap Shape:</label>
+      <input type="text" name="cap-shape" required>
+      <label>Cap Surface:</label>
+      <input type="text" name="cap-surface" required>
+      <label>Cap Color:</label>
+      <input type="text" name="cap-color" required>
+      <label>Bruises:</label>
+      <input type="text" name="bruises" required>
+      <label>Odor:</label>
+      <input type="text" name="odor" required>
+      <label>Gill Attachment:</label>
+      <input type="text" name="gill-attachment" required>
+      <label>Gill Spacing:</label>
+      <input type="text" name="gill-spacing" required>
+      <label>Gill Size:</label>
+      <input type="text" name="gill-size" required>
+      <label>Gill Color:</label>
+      <input type="text" name="gill-color" required>
+      <label>Stalk Shape:</label>
+      <input type="text" name="stalk-shape" required>
+      <label>Stalk Root:</label>
+      <input type="text" name="stalk-root" required>
+      <label>Stalk Surface Above Ring:</label>
+      <input type="text" name="stalk-surface-above-ring" required>
+      <label>Stalk Surface Below Ring:</label>
+      <input type="text" name="stalk-surface-below-ring" required>
+      <label>Stalk Color Above Ring:</label>
+      <input type="text" name="stalk-surface-above-ring" required>
+      <label>Stalk Color Below Ring:</label>
+      <input type="text" name="stalk-surface-below-ring" required>
+      <label>Veil Type:</label>
+      <input type="text" name="veil-type" required>
+      <label>Veil Color:</label>
+      <input type="text" name="veil-color" required>
+      <label>Ring Number:</label>
+      <input type="text" name="ring-number" required>
+      <label>Ring Type:</label>
+      <input type="text" name="ring-type" required>
+      <label>Spore Print Color:</label>
+      <input type="text" name="spore-print-color" required>
+      <label>Population:</label>
+      <input type="text" name="population" required>
+      <label>Habitat:</label>
+      <input type="text" name="habitat" required>
+      
+      <label>Cap Shape:</label>
+      <input type="text" name="cap-shape" required>
+      
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">{{ prediction }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
