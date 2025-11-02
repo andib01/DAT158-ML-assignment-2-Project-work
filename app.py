@@ -33,10 +33,10 @@ def index():
         y_pred = model.predict(X)[0]
         label = encoder.inverse_transform([int(y_pred)])[0]
 
-    if label == "e":
-        prediction = "This mushroom is edible!"
-    else:
-        prediction = "This mushroom is poisonous!"
+        if label == "e":
+            prediction = "This mushroom is edible!"
+        else:
+            prediction = "This mushroom is poisonous!"
 
     return render_template("index.html", prediction=prediction)
 
