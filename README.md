@@ -4,25 +4,35 @@ The model is deployed and can be tested at : https://mushroom-detection-ml.onren
 
 Clone the repo
 Run the following commands in the terminal:
+
 1.git clone https://github.com/andib01/DAT158-ML-assignment-2-Project-work
+
 2. cd DAT158-ML-assignment-2-Project-work
 
 (Optional) Create a virtual environment:
 Run the following commands in the terminal
+
 1. python -m venv venv
+
 2.source venv/bin/activate  # Windows: venv\Scripts\activate
 
 Install dependencies
+
 Run the following command in the terminal:
+
  pip install -r requirements.txt
 
 Run the app
+
 Run the following command in the terminal:
+
 python app.py or just click the run python file button if present in your IDE
 
  Usage
+ 
 1. Select mushroom attributes from the dropdown menus.
-2. Click "Predict" to see whether the mushroom is edible or poisonous.
+   
+3. Click "Predict" to see whether the mushroom is edible or poisonous.
 
 
 This is the code on kaggle that we used to train the model:
@@ -91,6 +101,7 @@ joblib.dump(cat_info, "mushroom_categories.pkl")
 y_val_pred = clf.predict(X_val)
 print("Balanced Accuracy:", balanced_accuracy_score(y_val, y_val_pred))
 print(classification_report(y_val, y_val_pred))
+
 
 
 
