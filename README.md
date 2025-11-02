@@ -1,3 +1,5 @@
+The model is deployed and can be tested at : https://mushroom-detection-ml.onrender.com/
+
 This is the code on kaggle that we used to train the model:
 
 import numpy as np
@@ -64,3 +66,4 @@ joblib.dump(cat_info, "mushroom_categories.pkl")
 y_val_pred = clf.predict(X_val)
 print("Balanced Accuracy:", balanced_accuracy_score(y_val, y_val_pred))
 print(classification_report(y_val, y_val_pred))
+
