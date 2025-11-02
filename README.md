@@ -37,7 +37,7 @@ python app.py or just click the run python file button if present in your IDE
 3. Click "Predict" to see whether the mushroom is edible or poisonous.
 
 
-**This is the code on kaggle that we used to train the model**:
+# This is the code on kaggle that we used to train the model:
 
 import numpy as np
 import pandas as pd
@@ -103,6 +103,7 @@ joblib.dump(cat_info, "mushroom_categories.pkl")
 y_val_pred = clf.predict(X_val)
 print("Balanced Accuracy:", balanced_accuracy_score(y_val, y_val_pred))
 print(classification_report(y_val, y_val_pred))
+
 
 
 
